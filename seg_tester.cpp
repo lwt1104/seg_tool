@@ -17,9 +17,12 @@
 #include <pcl/filters/passthrough.h>
 #include <pcl/features/normal_3d.h>
 
-typedef std::pair<std::string, std::vector<float> > vfh_model;
 typedef pcl::PointXYZRGB PointType;
 typedef pcl::Normal NormalType;
+
+double thresh = 0.2;
+int save_cylinder = 0;
+float radius = 0.05;
 
 int matchCylinder(const boost::filesystem::path &path) {
   pcl::PointCloud<PointType>::Ptr cloud (new pcl::PointCloud<PointType>);
@@ -40,7 +43,7 @@ int matchCylinder(const boost::filesystem::path &path) {
   // Estimate point normals
   ne.setSearchMethod (tree);
   ne.setInputCloud (cloud);
-  ne.setKSearch (10);
+  ne.setKSearch (30);
   ne.compute (*cloud_normals);
 
   // Create the segmentation object for cylinder segmentation and set all the parameters
@@ -50,13 +53,13 @@ int matchCylinder(const boost::filesystem::path &path) {
   seg.setNormalDistanceWeight (0.1);
   seg.setMaxIterations (10000);
   seg.setDistanceThreshold (0.05);
-  seg.setRadiusLimits (0, 0.1);
+  seg.setRadiusLimits (0, radius);
   seg.setInputCloud (cloud);
   seg.setInputNormals (cloud_normals);
 
   // Obtain the cylinder inliers and coefficients
   seg.segment (*inliers_cylinder, *coefficients_cylinder);
-  // std::cerr << "Cylinder coefficients: " << *coefficients_cylinder << std::endl;
+  // std::cerr << "Cylinder coef7cients: " << *coefficients_cylinder << std::endl;
 
   // Write the cylinder inliers to disk
   extract.setInputCloud (cloud);
@@ -68,13 +71,21 @@ int matchCylinder(const boost::filesystem::path &path) {
     std::cerr << "Can't find the cylindrical component.\t" << path.filename().string()<< std::endl;
     return 0;
   } else {
+    float ratio = (float)cloud_cylinder->points.size () / cloud->points.size();
 	  std::cerr << "Cylindrical: " << cloud_cylinder->points.size () 
 	    << "\t total size: " << cloud->points.size()
-	    << "\tCylinder points ratio " << (float)cloud_cylinder->points.size () / cloud->points.size() << std::endl;
-	  std::string current_dir = path.parent_path().string();
+	    << "\tCylinder points ratio " << ratio << std::endl;
+	  
+    if (save_cylinder) {
+      std::string current_dir = path.parent_path().string();
       std::string cylinder_name = "cylinder_" + path.filename().string();
-	  writer.write (current_dir + "/" + cylinder_name, *cloud_cylinder, false);
-	  return 1;
+  	  writer.write (current_dir + "/" + cylinder_name, *cloud_cylinder, false);
+    }
+    if (ratio > thresh) {
+    	return 1;
+    } else {
+      return 0;
+    }
   }
 }
 
@@ -100,6 +111,8 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
 
 }
 
+
+
 int
 main (int argc, char** argv)
 {
@@ -109,12 +122,14 @@ main (int argc, char** argv)
     return (-1);
   }
   int k = 2;
-  double thresh = 100;
 
   pcl::console::parse_argument (argc, argv, "-thresh", thresh);
   // Search for the k closest matches
   pcl::console::parse_argument (argc, argv, "-k", k);
 
+  pcl::console::parse_argument (argc, argv, "-cylinder", save_cylinder);
+
+  pcl::console::parse_argument (argc, argv, "-r", radius);
   std::string extension (".pcd");
   transform (extension.begin (), extension.end (), extension.begin (), (int(*)(int))tolower);
   testModel(argv[1], extension);

@@ -138,6 +138,19 @@ plane_cylinder_seg/fast:
 .PHONY : plane_cylinder_seg/fast
 
 #=============================================================================
+# Target rules for targets named plane_seg_tester
+
+# Build rule for target.
+plane_seg_tester: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plane_seg_tester
+.PHONY : plane_seg_tester
+
+# fast build rule for target.
+plane_seg_tester/fast:
+	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/build
+.PHONY : plane_seg_tester/fast
+
+#=============================================================================
 # Target rules for targets named seg_tester
 
 # Build rule for target.
@@ -222,6 +235,30 @@ plane_cylinder_seg.cpp.s:
 	$(MAKE) -f CMakeFiles/plane_cylinder_seg.dir/build.make CMakeFiles/plane_cylinder_seg.dir/plane_cylinder_seg.cpp.s
 .PHONY : plane_cylinder_seg.cpp.s
 
+plane_seg_tester.o: plane_seg_tester.cpp.o
+.PHONY : plane_seg_tester.o
+
+# target to build an object file
+plane_seg_tester.cpp.o:
+	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/plane_seg_tester.cpp.o
+.PHONY : plane_seg_tester.cpp.o
+
+plane_seg_tester.i: plane_seg_tester.cpp.i
+.PHONY : plane_seg_tester.i
+
+# target to preprocess a source file
+plane_seg_tester.cpp.i:
+	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/plane_seg_tester.cpp.i
+.PHONY : plane_seg_tester.cpp.i
+
+plane_seg_tester.s: plane_seg_tester.cpp.s
+.PHONY : plane_seg_tester.s
+
+# target to generate assembly for a file
+plane_seg_tester.cpp.s:
+	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/plane_seg_tester.cpp.s
+.PHONY : plane_seg_tester.cpp.s
+
 seg_tester.o: seg_tester.cpp.o
 .PHONY : seg_tester.o
 
@@ -256,6 +293,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... online_plane_seg"
 	@echo "... plane_cylinder_seg"
+	@echo "... plane_seg_tester"
 	@echo "... rebuild_cache"
 	@echo "... seg_tester"
 	@echo "... cylinder_seg.o"
@@ -267,6 +305,9 @@ help:
 	@echo "... plane_cylinder_seg.o"
 	@echo "... plane_cylinder_seg.i"
 	@echo "... plane_cylinder_seg.s"
+	@echo "... plane_seg_tester.o"
+	@echo "... plane_seg_tester.i"
+	@echo "... plane_seg_tester.s"
 	@echo "... seg_tester.o"
 	@echo "... seg_tester.i"
 	@echo "... seg_tester.s"

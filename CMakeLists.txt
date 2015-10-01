@@ -15,6 +15,10 @@ add_definitions(${PCL_DEFINITIONS})
 add_executable (cylinder_seg cylinder_seg.cpp)
 target_link_libraries (cylinder_seg ${PCL_LIBRARIES})
 
+add_executable (plane_seg_tester plane_seg_tester.cpp)
+target_link_libraries (plane_seg_tester ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+
+
 add_executable (plane_cylinder_seg plane_cylinder_seg.cpp)
 target_link_libraries (plane_cylinder_seg ${PCL_LIBRARIES})
 

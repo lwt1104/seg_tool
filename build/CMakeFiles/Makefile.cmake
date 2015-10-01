@@ -65,5 +65,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cylinder_seg.dir/DependInfo.cmake"
   "CMakeFiles/online_plane_seg.dir/DependInfo.cmake"
   "CMakeFiles/plane_cylinder_seg.dir/DependInfo.cmake"
+  "CMakeFiles/plane_seg_tester.dir/DependInfo.cmake"
   "CMakeFiles/seg_tester.dir/DependInfo.cmake"
   )
