@@ -88,13 +88,48 @@ clean: CMakeFiles/cylinder_seg.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/histogram_match_tester.dir
+
+# All Build rule for target.
+CMakeFiles/histogram_match_tester.dir/all:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/depend
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  2
+	@echo "Built target histogram_match_tester"
+.PHONY : CMakeFiles/histogram_match_tester.dir/all
+
+# Include target in all.
+all: CMakeFiles/histogram_match_tester.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/histogram_match_tester.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/histogram_match_tester.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/histogram_match_tester.dir/rule
+
+# Convenience name for target.
+histogram_match_tester: CMakeFiles/histogram_match_tester.dir/rule
+.PHONY : histogram_match_tester
+
+# clean rule for target.
+CMakeFiles/histogram_match_tester.dir/clean:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/clean
+.PHONY : CMakeFiles/histogram_match_tester.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/histogram_match_tester.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/online_plane_seg.dir
 
 # All Build rule for target.
 CMakeFiles/online_plane_seg.dir/all:
 	$(MAKE) -f CMakeFiles/online_plane_seg.dir/build.make CMakeFiles/online_plane_seg.dir/depend
 	$(MAKE) -f CMakeFiles/online_plane_seg.dir/build.make CMakeFiles/online_plane_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  3
 	@echo "Built target online_plane_seg"
 .PHONY : CMakeFiles/online_plane_seg.dir/all
 
@@ -129,7 +164,7 @@ clean: CMakeFiles/online_plane_seg.dir/clean
 CMakeFiles/plane_cylinder_seg.dir/all:
 	$(MAKE) -f CMakeFiles/plane_cylinder_seg.dir/build.make CMakeFiles/plane_cylinder_seg.dir/depend
 	$(MAKE) -f CMakeFiles/plane_cylinder_seg.dir/build.make CMakeFiles/plane_cylinder_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  4
 	@echo "Built target plane_cylinder_seg"
 .PHONY : CMakeFiles/plane_cylinder_seg.dir/all
 
@@ -164,7 +199,7 @@ clean: CMakeFiles/plane_cylinder_seg.dir/clean
 CMakeFiles/plane_seg_tester.dir/all:
 	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/depend
 	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  5
 	@echo "Built target plane_seg_tester"
 .PHONY : CMakeFiles/plane_seg_tester.dir/all
 
@@ -199,7 +234,7 @@ clean: CMakeFiles/plane_seg_tester.dir/clean
 CMakeFiles/seg_tester.dir/all:
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/depend
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  6
 	@echo "Built target seg_tester"
 .PHONY : CMakeFiles/seg_tester.dir/all
 

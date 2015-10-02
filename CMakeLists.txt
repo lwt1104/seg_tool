@@ -4,7 +4,7 @@ project(cylinder_segmentation)
 
 find_package(PCL 1.7 REQUIRED)
 find_package(PNG REQUIRED)
-
+find_package(OpenCV REQUIRED)
 
 include_directories(${PNG_INCLUDE_DIR})
 
@@ -28,3 +28,5 @@ target_link_libraries(seg_tester ${PCL_LIBRARIES} ${Boost_LIBRARIES})
 add_executable (online_plane_seg online_plane_seg.cpp)
 target_link_libraries (online_plane_seg ${PCL_LIBRARIES} ${PNG_LIBRARY})
 
+add_executable(histogram_match_tester histogram_match_tester.cpp )
+target_link_libraries( histogram_match_tester ${OpenCV_LIBS} ${PCL_LIBRARIES} ${Boost_LIBRARIES})

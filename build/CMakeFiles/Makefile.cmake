@@ -21,6 +21,10 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/vtk-5.8/VTKConfigVersion.cmake"
   "/usr/lib/vtk-5.8/VTKTargets-release.cmake"
   "/usr/lib/vtk-5.8/VTKTargets.cmake"
+  "/usr/share/OpenCV/OpenCVConfig-version.cmake"
+  "/usr/share/OpenCV/OpenCVConfig.cmake"
+  "/usr/share/OpenCV/OpenCVModules-release.cmake"
+  "/usr/share/OpenCV/OpenCVModules.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake"
@@ -63,6 +67,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cylinder_seg.dir/DependInfo.cmake"
+  "CMakeFiles/histogram_match_tester.dir/DependInfo.cmake"
   "CMakeFiles/online_plane_seg.dir/DependInfo.cmake"
   "CMakeFiles/plane_cylinder_seg.dir/DependInfo.cmake"
   "CMakeFiles/plane_seg_tester.dir/DependInfo.cmake"

@@ -112,6 +112,19 @@ cylinder_seg/fast:
 .PHONY : cylinder_seg/fast
 
 #=============================================================================
+# Target rules for targets named histogram_match_tester
+
+# Build rule for target.
+histogram_match_tester: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 histogram_match_tester
+.PHONY : histogram_match_tester
+
+# fast build rule for target.
+histogram_match_tester/fast:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/build
+.PHONY : histogram_match_tester/fast
+
+#=============================================================================
 # Target rules for targets named online_plane_seg
 
 # Build rule for target.
@@ -186,6 +199,30 @@ cylinder_seg.s: cylinder_seg.cpp.s
 cylinder_seg.cpp.s:
 	$(MAKE) -f CMakeFiles/cylinder_seg.dir/build.make CMakeFiles/cylinder_seg.dir/cylinder_seg.cpp.s
 .PHONY : cylinder_seg.cpp.s
+
+histogram_match_tester.o: histogram_match_tester.cpp.o
+.PHONY : histogram_match_tester.o
+
+# target to build an object file
+histogram_match_tester.cpp.o:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/histogram_match_tester.cpp.o
+.PHONY : histogram_match_tester.cpp.o
+
+histogram_match_tester.i: histogram_match_tester.cpp.i
+.PHONY : histogram_match_tester.i
+
+# target to preprocess a source file
+histogram_match_tester.cpp.i:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/histogram_match_tester.cpp.i
+.PHONY : histogram_match_tester.cpp.i
+
+histogram_match_tester.s: histogram_match_tester.cpp.s
+.PHONY : histogram_match_tester.s
+
+# target to generate assembly for a file
+histogram_match_tester.cpp.s:
+	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/histogram_match_tester.cpp.s
+.PHONY : histogram_match_tester.cpp.s
 
 online_plane_seg.o: online_plane_seg.cpp.o
 .PHONY : online_plane_seg.o
@@ -291,6 +328,7 @@ help:
 	@echo "... depend"
 	@echo "... cylinder_seg"
 	@echo "... edit_cache"
+	@echo "... histogram_match_tester"
 	@echo "... online_plane_seg"
 	@echo "... plane_cylinder_seg"
 	@echo "... plane_seg_tester"
@@ -299,6 +337,9 @@ help:
 	@echo "... cylinder_seg.o"
 	@echo "... cylinder_seg.i"
 	@echo "... cylinder_seg.s"
+	@echo "... histogram_match_tester.o"
+	@echo "... histogram_match_tester.i"
+	@echo "... histogram_match_tester.s"
 	@echo "... online_plane_seg.o"
 	@echo "... online_plane_seg.i"
 	@echo "... online_plane_seg.s"

@@ -554,42 +554,6 @@ int Consumer<PointT>::pcd_nb = 0;
 //   saveOne = true;
 // }
 
-//////////////////////////////////////////////////////////////////////////////////////////
-void
-printHelp (int default_buff_size, int, char **argv)
-{
-  using pcl::console::print_error;
-  using pcl::console::print_info;
-
-  print_error ("Syntax is: %s ((<device_id> | <path-to-oni-file>) [-xyz] [-shift] [-buf X]  | -l [<device_id>] | -h | --help)]\n", argv [0]);
-  print_info ("%s -h | --help : shows this help\n", argv [0]);
-  print_info ("%s -xyz : save only XYZ data, even if the device is RGB capable\n", argv [0]);
-  print_info ("%s -shift : use OpenNI shift values rather than 12-bit depth\n", argv [0]);
-  print_info ("%s -buf X ; use a buffer size of X frames (default: ", argv [0]);
-  print_value ("%d", default_buff_size); print_info (")\n");
-  print_info ("%s -l : list all available devices\n", argv [0]);
-  print_info ("%s -l <device-id> :list all available modes for specified device\n", argv [0]);
-  print_info ("\t\t<device_id> may be \"#1\", \"#2\", ... for the first, second etc device in the list\n");
-#ifndef _WIN32
-  print_info ("\t\t                   bus@address for the device connected to a specific usb-bus / address combination\n");
-  print_info ("\t\t                   <serial-number>\n");
-#endif
-  print_info ("\n\nexamples:\n");
-  print_info ("%s \"#1\"\n", argv [0]);
-  print_info ("\t\t uses the first device.\n");
-  print_info ("%s  \"./temp/test.oni\"\n", argv [0]);
-  print_info ("\t\t uses the oni-player device to play back oni file given by path.\n");
-  print_info ("%s -l\n", argv [0]);
-  print_info ("\t\t list all available devices.\n");
-  print_info ("%s -l \"#2\"\n", argv [0]);
-  print_info ("\t\t list all available modes for the second device.\n");
-  #ifndef _WIN32
-  print_info ("%s A00361800903049A\n", argv [0]);
-  print_info ("\t\t uses the device with the serial number \'A00361800903049A\'.\n");
-  print_info ("%s 1@16\n", argv [0]);
-  print_info ("\t\t uses the device on address 16 at USB bus 1.\n");
-  #endif
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 int
@@ -597,8 +561,7 @@ main (int argc, char** argv)
 {
   // execute(argc, argv);
   of.initialize(argc, argv);
-  print_highlight ("PCL OpenNI Recorder for saving buffered PCD (binary compressed to disk). See %s -h for options.\n", argv[0]);
-
+  
   std::string device_id ("");
   int buff_size = BUFFER_SIZE;
 
