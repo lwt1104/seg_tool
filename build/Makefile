@@ -176,6 +176,32 @@ seg_tester/fast:
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/build
 .PHONY : seg_tester/fast
 
+#=============================================================================
+# Target rules for targets named sift
+
+# Build rule for target.
+sift: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sift
+.PHONY : sift
+
+# fast build rule for target.
+sift/fast:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/build
+.PHONY : sift/fast
+
+#=============================================================================
+# Target rules for targets named sift_draw
+
+# Build rule for target.
+sift_draw: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sift_draw
+.PHONY : sift_draw
+
+# fast build rule for target.
+sift_draw/fast:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/build
+.PHONY : sift_draw/fast
+
 cylinder_seg.o: cylinder_seg.cpp.o
 .PHONY : cylinder_seg.o
 
@@ -320,6 +346,54 @@ seg_tester.cpp.s:
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/seg_tester.cpp.s
 .PHONY : seg_tester.cpp.s
 
+sift.o: sift.cpp.o
+.PHONY : sift.o
+
+# target to build an object file
+sift.cpp.o:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/sift.cpp.o
+.PHONY : sift.cpp.o
+
+sift.i: sift.cpp.i
+.PHONY : sift.i
+
+# target to preprocess a source file
+sift.cpp.i:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/sift.cpp.i
+.PHONY : sift.cpp.i
+
+sift.s: sift.cpp.s
+.PHONY : sift.s
+
+# target to generate assembly for a file
+sift.cpp.s:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/sift.cpp.s
+.PHONY : sift.cpp.s
+
+sift_draw.o: sift_draw.cpp.o
+.PHONY : sift_draw.o
+
+# target to build an object file
+sift_draw.cpp.o:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/sift_draw.cpp.o
+.PHONY : sift_draw.cpp.o
+
+sift_draw.i: sift_draw.cpp.i
+.PHONY : sift_draw.i
+
+# target to preprocess a source file
+sift_draw.cpp.i:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/sift_draw.cpp.i
+.PHONY : sift_draw.cpp.i
+
+sift_draw.s: sift_draw.cpp.s
+.PHONY : sift_draw.s
+
+# target to generate assembly for a file
+sift_draw.cpp.s:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/sift_draw.cpp.s
+.PHONY : sift_draw.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +408,8 @@ help:
 	@echo "... plane_seg_tester"
 	@echo "... rebuild_cache"
 	@echo "... seg_tester"
+	@echo "... sift"
+	@echo "... sift_draw"
 	@echo "... cylinder_seg.o"
 	@echo "... cylinder_seg.i"
 	@echo "... cylinder_seg.s"
@@ -352,6 +428,12 @@ help:
 	@echo "... seg_tester.o"
 	@echo "... seg_tester.i"
 	@echo "... seg_tester.s"
+	@echo "... sift.o"
+	@echo "... sift.i"
+	@echo "... sift.s"
+	@echo "... sift_draw.o"
+	@echo "... sift_draw.i"
+	@echo "... sift_draw.s"
 .PHONY : help
 
 

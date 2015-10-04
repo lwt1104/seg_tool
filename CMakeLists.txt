@@ -30,3 +30,9 @@ target_link_libraries (online_plane_seg ${PCL_LIBRARIES} ${PNG_LIBRARY})
 
 add_executable(histogram_match_tester histogram_match_tester.cpp )
 target_link_libraries( histogram_match_tester ${OpenCV_LIBS} ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(sift sift.cpp )
+target_link_libraries(sift ${OpenCV_LIBS}  ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(sift_draw sift_draw.cpp )
+target_link_libraries(sift_draw ${OpenCV_LIBS})

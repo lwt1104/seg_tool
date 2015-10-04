@@ -4,3 +4,5 @@
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/plane_cylinder_seg.dir
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/plane_seg_tester.dir
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/seg_tester.dir
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/sift.dir
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/sift_draw.dir

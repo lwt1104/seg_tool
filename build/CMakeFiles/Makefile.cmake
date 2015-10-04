@@ -72,4 +72,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/plane_cylinder_seg.dir/DependInfo.cmake"
   "CMakeFiles/plane_seg_tester.dir/DependInfo.cmake"
   "CMakeFiles/seg_tester.dir/DependInfo.cmake"
+  "CMakeFiles/sift.dir/DependInfo.cmake"
+  "CMakeFiles/sift_draw.dir/DependInfo.cmake"
   )

@@ -20,11 +20,30 @@
 typedef pcl::PointXYZRGBA PointType;
 typedef pcl::Normal NormalType;
 
-double thresh = 0.2;
+double thresh = 0.3;
 int save = 0;
-float radius = 0.05;
+float radius = 0.04;
+double max_metric = -1;
+double min_metric = 100000;
+double min_z = -1;
+double max_z = 100;
 
-int matchCylinder(const boost::filesystem::path &path) {
+float get_depth(const pcl::PointCloud<PointType>::Ptr& cloud) {
+  float zsum = 0;
+  int num = 0;
+  for (size_t i = 0; i < cloud->points.size(); i++) {
+    PointType &p = cloud->points[i];
+    if (!pcl::isFinite(p)) {
+      continue;
+    }
+    zsum += p.z;
+    num++;
+  }
+  float distance = zsum / num;
+  return distance;
+}
+
+int matchPLane(const boost::filesystem::path &path) {
   pcl::PointCloud<PointType>::Ptr cloud (new pcl::PointCloud<PointType>);
   pcl::PointCloud<NormalType>::Ptr cloud_normals (new pcl::PointCloud<NormalType> ());
   pcl::NormalEstimation<PointType, pcl::Normal> ne;  
@@ -40,7 +59,12 @@ int matchCylinder(const boost::filesystem::path &path) {
     PCL_ERROR ("Couldn't read file %s.pcd \n", path.string().c_str());
     return -1;
   }
+  float depth = get_depth(cloud);
+  if (depth < min_z || depth > max_z) {
+    return -1;
+  }
 
+  
   // Estimate point normals
   ne.setSearchMethod (tree);
   ne.setInputCloud (cloud);
@@ -67,14 +91,13 @@ int matchCylinder(const boost::filesystem::path &path) {
 
   // Write the planar inliers to disk
   pcl::PointCloud<PointType>::Ptr cloud_plane (new pcl::PointCloud<PointType> ());
-  extract.filter (*cloud_plane);
-
+  extract.filter (*cloud_plane);  
   if (cloud_plane->points.empty ()) {
     std::cerr << "Can't find the cylindrical component.\t" << path.filename().string()<< std::endl;
     return 0;
   } else {
     float ratio = (float)cloud_plane->points.size () / cloud->points.size(); 
-    std::cerr << "Plane: " << cloud_plane->points.size () 
+    std::cerr <<  path.filename().string() << " " << cloud_plane->points.size () 
       << "\t total size: " << cloud->points.size()
       << "\tplane points ratio " << ratio << std::endl;
 	  
@@ -83,6 +106,14 @@ int matchCylinder(const boost::filesystem::path &path) {
       std::string plane_name = "plane_" + path.filename().string();
   	  writer.write (current_dir + "/" + plane_name, *cloud_plane, false);
     }
+
+    if (ratio > max_metric) {
+      max_metric = ratio;
+    } 
+    if (ratio < min_metric) {
+      min_metric = ratio;
+    }
+
     if (ratio > thresh) {
     	return 1;
     } else {
@@ -101,7 +132,7 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
     if (!boost::filesystem::is_regular_file (it->status ()) || boost::filesystem::extension (it->path ()) != extension) {
       continue;
     }
-    int result = matchCylinder(base_dir / it->path ().filename ());
+    int result = matchPLane(base_dir / it->path ().filename ());
     if ( result != -1) {
       num++;
     }
@@ -110,7 +141,7 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
     }
   }
   pcl::console::print_info ("%d postive of total %d, rate: %f\n", detect, num, (float)(detect) / num);
-
+  pcl::console::print_info ("min: %f \t max: %f\n", min_metric, max_metric);
 }
 
 
@@ -132,6 +163,10 @@ main (int argc, char** argv)
   pcl::console::parse_argument (argc, argv, "-s", save);
 
   pcl::console::parse_argument (argc, argv, "-r", radius);
+
+  pcl::console::parse_argument (argc, argv, "-min_z", min_z);
+  pcl::console::parse_argument (argc, argv, "-max_z", max_z);
+
   std::string extension (".pcd");
   transform (extension.begin (), extension.end (), extension.begin (), (int(*)(int))tolower);
   testModel(argv[1], extension);

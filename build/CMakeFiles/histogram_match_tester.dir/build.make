@@ -89,6 +89,7 @@ histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
@@ -179,10 +180,13 @@ histogram_match_tester: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libpthread.so
+histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
+histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
-histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 histogram_match_tester: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8

@@ -23,6 +23,8 @@ typedef pcl::Normal NormalType;
 double thresh = 0.2;
 int save_cylinder = 0;
 float radius = 0.05;
+double max_metric = -1;
+double min_metric = 100000;
 
 int matchCylinder(const boost::filesystem::path &path) {
   pcl::PointCloud<PointType>::Ptr cloud (new pcl::PointCloud<PointType>);
@@ -72,7 +74,7 @@ int matchCylinder(const boost::filesystem::path &path) {
     return 0;
   } else {
     float ratio = (float)cloud_cylinder->points.size () / cloud->points.size();
-	  std::cerr << "Cylindrical: " << cloud_cylinder->points.size () 
+	  std::cerr <<  path.string() << " " << cloud_cylinder->points.size () 
 	    << "\t total size: " << cloud->points.size()
 	    << "\tCylinder points ratio " << ratio << std::endl;
 	  
@@ -81,6 +83,13 @@ int matchCylinder(const boost::filesystem::path &path) {
       std::string cylinder_name = "cylinder_" + path.filename().string();
   	  writer.write (current_dir + "/" + cylinder_name, *cloud_cylinder, false);
     }
+    if (ratio > max_metric) {
+      max_metric = ratio;
+    }
+    if (ratio < min_metric) {
+      min_metric = ratio;
+    }
+
     if (ratio > thresh) {
     	return 1;
     } else {
@@ -108,7 +117,7 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
     }
   }
   pcl::console::print_info ("%d postive of total %d, rate: %f\n", detect, num, (float)(detect) / num);
-
+  pcl::console::print_info ("min: %f \t max: %f\n", min_metric, max_metric);
 }
 
 
@@ -127,7 +136,7 @@ main (int argc, char** argv)
   // Search for the k closest matches
   pcl::console::parse_argument (argc, argv, "-k", k);
 
-  pcl::console::parse_argument (argc, argv, "-cylinder", save_cylinder);
+  pcl::console::parse_argument (argc, argv, "-s", save_cylinder);
 
   pcl::console::parse_argument (argc, argv, "-r", radius);
   std::string extension (".pcd");

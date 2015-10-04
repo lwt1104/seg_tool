@@ -263,6 +263,76 @@ clean: CMakeFiles/seg_tester.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sift.dir
+
+# All Build rule for target.
+CMakeFiles/sift.dir/all:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/depend
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  7
+	@echo "Built target sift"
+.PHONY : CMakeFiles/sift.dir/all
+
+# Include target in all.
+all: CMakeFiles/sift.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sift.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sift.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/sift.dir/rule
+
+# Convenience name for target.
+sift: CMakeFiles/sift.dir/rule
+.PHONY : sift
+
+# clean rule for target.
+CMakeFiles/sift.dir/clean:
+	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/clean
+.PHONY : CMakeFiles/sift.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sift.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sift_draw.dir
+
+# All Build rule for target.
+CMakeFiles/sift_draw.dir/all:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/depend
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  8
+	@echo "Built target sift_draw"
+.PHONY : CMakeFiles/sift_draw.dir/all
+
+# Include target in all.
+all: CMakeFiles/sift_draw.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sift_draw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sift_draw.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/sift_draw.dir/rule
+
+# Convenience name for target.
+sift_draw: CMakeFiles/sift_draw.dir/rule
+.PHONY : sift_draw
+
+# clean rule for target.
+CMakeFiles/sift_draw.dir/clean:
+	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/clean
+.PHONY : CMakeFiles/sift_draw.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sift_draw.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
