@@ -6,6 +6,8 @@ find_package(PCL 1.7 REQUIRED)
 find_package(PNG REQUIRED)
 find_package(OpenCV REQUIRED)
 
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 include_directories(${PNG_INCLUDE_DIR})
 
 include_directories(${PCL_INCLUDE_DIRS})
@@ -36,3 +38,28 @@ target_link_libraries(sift ${OpenCV_LIBS}  ${PCL_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(sift_draw sift_draw.cpp )
 target_link_libraries(sift_draw ${OpenCV_LIBS})
+
+add_executable(auto_learn_col auto_learn_col.cpp)
+target_link_libraries(auto_learn_col ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+
+find_package(HDF5)
+if(HDF5_FOUND)
+# find FLANN with pkg-config 
+ find_package(PkgConfig REQUIRED) 
+ pkg_check_modules(FLANN REQUIRED flann) 
+ link_directories(${FLANN_LIBRARY_DIRS}) 
+ include_directories(${FLANN_INCLUDE_DIRS}) 
+ if(FLANN_CFLAGS) 
+   add_definitions(${FLANN_CFLAGS}) 
+ endif(FLANN_CFLAGS)
+  include_directories(${HDF5_INCLUDE_DIR})
+
+  add_executable(auto_learn_flann auto_learn_flann.cpp)
+  target_link_libraries(auto_learn_flann ${PCL_LIBRARIES} ${Boost_LIBRARIES}
+                                 ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
+endif(HDF5_FOUND)
+
+
+add_executable(auto_learn_plane auto_learn_plane.cpp)
+target_link_libraries(auto_learn_plane ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+

@@ -38,6 +38,9 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/lwt1104/plane_cylinder_RANSAC
 
@@ -49,8 +52,8 @@ CMAKE_BINARY_DIR = /home/lwt1104/plane_cylinder_RANSAC/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -97,6 +100,58 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named auto_learn_col
+
+# Build rule for target.
+auto_learn_col: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 auto_learn_col
+.PHONY : auto_learn_col
+
+# fast build rule for target.
+auto_learn_col/fast:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/build
+.PHONY : auto_learn_col/fast
+
+#=============================================================================
+# Target rules for targets named auto_learn_flann
+
+# Build rule for target.
+auto_learn_flann: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 auto_learn_flann
+.PHONY : auto_learn_flann
+
+# fast build rule for target.
+auto_learn_flann/fast:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/build
+.PHONY : auto_learn_flann/fast
+
+#=============================================================================
+# Target rules for targets named auto_learn_plane
+
+# Build rule for target.
+auto_learn_plane: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 auto_learn_plane
+.PHONY : auto_learn_plane
+
+# fast build rule for target.
+auto_learn_plane/fast:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/build
+.PHONY : auto_learn_plane/fast
+
+#=============================================================================
+# Target rules for targets named auto_test_flann
+
+# Build rule for target.
+auto_test_flann: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 auto_test_flann
+.PHONY : auto_test_flann
+
+# fast build rule for target.
+auto_test_flann/fast:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/build
+.PHONY : auto_test_flann/fast
 
 #=============================================================================
 # Target rules for targets named cylinder_seg
@@ -201,6 +256,102 @@ sift_draw: cmake_check_build_system
 sift_draw/fast:
 	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/build
 .PHONY : sift_draw/fast
+
+auto_learn_col.o: auto_learn_col.cpp.o
+.PHONY : auto_learn_col.o
+
+# target to build an object file
+auto_learn_col.cpp.o:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/auto_learn_col.cpp.o
+.PHONY : auto_learn_col.cpp.o
+
+auto_learn_col.i: auto_learn_col.cpp.i
+.PHONY : auto_learn_col.i
+
+# target to preprocess a source file
+auto_learn_col.cpp.i:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/auto_learn_col.cpp.i
+.PHONY : auto_learn_col.cpp.i
+
+auto_learn_col.s: auto_learn_col.cpp.s
+.PHONY : auto_learn_col.s
+
+# target to generate assembly for a file
+auto_learn_col.cpp.s:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/auto_learn_col.cpp.s
+.PHONY : auto_learn_col.cpp.s
+
+auto_learn_flann.o: auto_learn_flann.cpp.o
+.PHONY : auto_learn_flann.o
+
+# target to build an object file
+auto_learn_flann.cpp.o:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/auto_learn_flann.cpp.o
+.PHONY : auto_learn_flann.cpp.o
+
+auto_learn_flann.i: auto_learn_flann.cpp.i
+.PHONY : auto_learn_flann.i
+
+# target to preprocess a source file
+auto_learn_flann.cpp.i:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/auto_learn_flann.cpp.i
+.PHONY : auto_learn_flann.cpp.i
+
+auto_learn_flann.s: auto_learn_flann.cpp.s
+.PHONY : auto_learn_flann.s
+
+# target to generate assembly for a file
+auto_learn_flann.cpp.s:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/auto_learn_flann.cpp.s
+.PHONY : auto_learn_flann.cpp.s
+
+auto_learn_plane.o: auto_learn_plane.cpp.o
+.PHONY : auto_learn_plane.o
+
+# target to build an object file
+auto_learn_plane.cpp.o:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/auto_learn_plane.cpp.o
+.PHONY : auto_learn_plane.cpp.o
+
+auto_learn_plane.i: auto_learn_plane.cpp.i
+.PHONY : auto_learn_plane.i
+
+# target to preprocess a source file
+auto_learn_plane.cpp.i:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/auto_learn_plane.cpp.i
+.PHONY : auto_learn_plane.cpp.i
+
+auto_learn_plane.s: auto_learn_plane.cpp.s
+.PHONY : auto_learn_plane.s
+
+# target to generate assembly for a file
+auto_learn_plane.cpp.s:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/auto_learn_plane.cpp.s
+.PHONY : auto_learn_plane.cpp.s
+
+auto_test_flann.o: auto_test_flann.cpp.o
+.PHONY : auto_test_flann.o
+
+# target to build an object file
+auto_test_flann.cpp.o:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/auto_test_flann.cpp.o
+.PHONY : auto_test_flann.cpp.o
+
+auto_test_flann.i: auto_test_flann.cpp.i
+.PHONY : auto_test_flann.i
+
+# target to preprocess a source file
+auto_test_flann.cpp.i:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/auto_test_flann.cpp.i
+.PHONY : auto_test_flann.cpp.i
+
+auto_test_flann.s: auto_test_flann.cpp.s
+.PHONY : auto_test_flann.s
+
+# target to generate assembly for a file
+auto_test_flann.cpp.s:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/auto_test_flann.cpp.s
+.PHONY : auto_test_flann.cpp.s
 
 cylinder_seg.o: cylinder_seg.cpp.o
 .PHONY : cylinder_seg.o
@@ -400,6 +551,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... auto_learn_col"
+	@echo "... auto_learn_flann"
+	@echo "... auto_learn_plane"
+	@echo "... auto_test_flann"
 	@echo "... cylinder_seg"
 	@echo "... edit_cache"
 	@echo "... histogram_match_tester"
@@ -410,6 +565,18 @@ help:
 	@echo "... seg_tester"
 	@echo "... sift"
 	@echo "... sift_draw"
+	@echo "... auto_learn_col.o"
+	@echo "... auto_learn_col.i"
+	@echo "... auto_learn_col.s"
+	@echo "... auto_learn_flann.o"
+	@echo "... auto_learn_flann.i"
+	@echo "... auto_learn_flann.s"
+	@echo "... auto_learn_plane.o"
+	@echo "... auto_learn_plane.i"
+	@echo "... auto_learn_plane.s"
+	@echo "... auto_test_flann.o"
+	@echo "... auto_test_flann.i"
+	@echo "... auto_test_flann.s"
 	@echo "... cylinder_seg.o"
 	@echo "... cylinder_seg.i"
 	@echo "... cylinder_seg.s"

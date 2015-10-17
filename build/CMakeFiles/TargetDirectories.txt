@@ -1,3 +1,7 @@
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/auto_learn_col.dir
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/auto_learn_flann.dir
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/auto_learn_plane.dir
+/home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/auto_test_flann.dir
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/cylinder_seg.dir
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/histogram_match_tester.dir
 /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles/online_plane_seg.dir

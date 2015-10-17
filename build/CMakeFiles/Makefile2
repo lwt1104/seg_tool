@@ -46,11 +46,154 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/lwt1104/plane_cylinder_RANSAC
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/lwt1104/plane_cylinder_RANSAC/build
+
+#=============================================================================
+# Target rules for target CMakeFiles/auto_learn_col.dir
+
+# All Build rule for target.
+CMakeFiles/auto_learn_col.dir/all:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/depend
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  1
+	@echo "Built target auto_learn_col"
+.PHONY : CMakeFiles/auto_learn_col.dir/all
+
+# Include target in all.
+all: CMakeFiles/auto_learn_col.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/auto_learn_col.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/auto_learn_col.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/auto_learn_col.dir/rule
+
+# Convenience name for target.
+auto_learn_col: CMakeFiles/auto_learn_col.dir/rule
+.PHONY : auto_learn_col
+
+# clean rule for target.
+CMakeFiles/auto_learn_col.dir/clean:
+	$(MAKE) -f CMakeFiles/auto_learn_col.dir/build.make CMakeFiles/auto_learn_col.dir/clean
+.PHONY : CMakeFiles/auto_learn_col.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/auto_learn_col.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/auto_learn_flann.dir
+
+# All Build rule for target.
+CMakeFiles/auto_learn_flann.dir/all:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/depend
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  2
+	@echo "Built target auto_learn_flann"
+.PHONY : CMakeFiles/auto_learn_flann.dir/all
+
+# Include target in all.
+all: CMakeFiles/auto_learn_flann.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/auto_learn_flann.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/auto_learn_flann.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/auto_learn_flann.dir/rule
+
+# Convenience name for target.
+auto_learn_flann: CMakeFiles/auto_learn_flann.dir/rule
+.PHONY : auto_learn_flann
+
+# clean rule for target.
+CMakeFiles/auto_learn_flann.dir/clean:
+	$(MAKE) -f CMakeFiles/auto_learn_flann.dir/build.make CMakeFiles/auto_learn_flann.dir/clean
+.PHONY : CMakeFiles/auto_learn_flann.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/auto_learn_flann.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/auto_learn_plane.dir
+
+# All Build rule for target.
+CMakeFiles/auto_learn_plane.dir/all:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/depend
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  3
+	@echo "Built target auto_learn_plane"
+.PHONY : CMakeFiles/auto_learn_plane.dir/all
+
+# Include target in all.
+all: CMakeFiles/auto_learn_plane.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/auto_learn_plane.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/auto_learn_plane.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/auto_learn_plane.dir/rule
+
+# Convenience name for target.
+auto_learn_plane: CMakeFiles/auto_learn_plane.dir/rule
+.PHONY : auto_learn_plane
+
+# clean rule for target.
+CMakeFiles/auto_learn_plane.dir/clean:
+	$(MAKE) -f CMakeFiles/auto_learn_plane.dir/build.make CMakeFiles/auto_learn_plane.dir/clean
+.PHONY : CMakeFiles/auto_learn_plane.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/auto_learn_plane.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/auto_test_flann.dir
+
+# All Build rule for target.
+CMakeFiles/auto_test_flann.dir/all:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/depend
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  4
+	@echo "Built target auto_test_flann"
+.PHONY : CMakeFiles/auto_test_flann.dir/all
+
+# Include target in all.
+all: CMakeFiles/auto_test_flann.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/auto_test_flann.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/auto_test_flann.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles 0
+.PHONY : CMakeFiles/auto_test_flann.dir/rule
+
+# Convenience name for target.
+auto_test_flann: CMakeFiles/auto_test_flann.dir/rule
+.PHONY : auto_test_flann
+
+# clean rule for target.
+CMakeFiles/auto_test_flann.dir/clean:
+	$(MAKE) -f CMakeFiles/auto_test_flann.dir/build.make CMakeFiles/auto_test_flann.dir/clean
+.PHONY : CMakeFiles/auto_test_flann.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/auto_test_flann.dir/clean
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/cylinder_seg.dir
@@ -59,7 +202,7 @@ CMAKE_BINARY_DIR = /home/lwt1104/plane_cylinder_RANSAC/build
 CMakeFiles/cylinder_seg.dir/all:
 	$(MAKE) -f CMakeFiles/cylinder_seg.dir/build.make CMakeFiles/cylinder_seg.dir/depend
 	$(MAKE) -f CMakeFiles/cylinder_seg.dir/build.make CMakeFiles/cylinder_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  5
 	@echo "Built target cylinder_seg"
 .PHONY : CMakeFiles/cylinder_seg.dir/all
 
@@ -94,7 +237,7 @@ clean: CMakeFiles/cylinder_seg.dir/clean
 CMakeFiles/histogram_match_tester.dir/all:
 	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/depend
 	$(MAKE) -f CMakeFiles/histogram_match_tester.dir/build.make CMakeFiles/histogram_match_tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  6
 	@echo "Built target histogram_match_tester"
 .PHONY : CMakeFiles/histogram_match_tester.dir/all
 
@@ -129,7 +272,7 @@ clean: CMakeFiles/histogram_match_tester.dir/clean
 CMakeFiles/online_plane_seg.dir/all:
 	$(MAKE) -f CMakeFiles/online_plane_seg.dir/build.make CMakeFiles/online_plane_seg.dir/depend
 	$(MAKE) -f CMakeFiles/online_plane_seg.dir/build.make CMakeFiles/online_plane_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  7
 	@echo "Built target online_plane_seg"
 .PHONY : CMakeFiles/online_plane_seg.dir/all
 
@@ -164,7 +307,7 @@ clean: CMakeFiles/online_plane_seg.dir/clean
 CMakeFiles/plane_cylinder_seg.dir/all:
 	$(MAKE) -f CMakeFiles/plane_cylinder_seg.dir/build.make CMakeFiles/plane_cylinder_seg.dir/depend
 	$(MAKE) -f CMakeFiles/plane_cylinder_seg.dir/build.make CMakeFiles/plane_cylinder_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  8
 	@echo "Built target plane_cylinder_seg"
 .PHONY : CMakeFiles/plane_cylinder_seg.dir/all
 
@@ -199,7 +342,7 @@ clean: CMakeFiles/plane_cylinder_seg.dir/clean
 CMakeFiles/plane_seg_tester.dir/all:
 	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/depend
 	$(MAKE) -f CMakeFiles/plane_seg_tester.dir/build.make CMakeFiles/plane_seg_tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  9
 	@echo "Built target plane_seg_tester"
 .PHONY : CMakeFiles/plane_seg_tester.dir/all
 
@@ -234,7 +377,7 @@ clean: CMakeFiles/plane_seg_tester.dir/clean
 CMakeFiles/seg_tester.dir/all:
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/depend
 	$(MAKE) -f CMakeFiles/seg_tester.dir/build.make CMakeFiles/seg_tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  10
 	@echo "Built target seg_tester"
 .PHONY : CMakeFiles/seg_tester.dir/all
 
@@ -269,7 +412,7 @@ clean: CMakeFiles/seg_tester.dir/clean
 CMakeFiles/sift.dir/all:
 	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/depend
 	$(MAKE) -f CMakeFiles/sift.dir/build.make CMakeFiles/sift.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  11
 	@echo "Built target sift"
 .PHONY : CMakeFiles/sift.dir/all
 
@@ -304,7 +447,7 @@ clean: CMakeFiles/sift.dir/clean
 CMakeFiles/sift_draw.dir/all:
 	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/depend
 	$(MAKE) -f CMakeFiles/sift_draw.dir/build.make CMakeFiles/sift_draw.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/plane_cylinder_RANSAC/build/CMakeFiles  12
 	@echo "Built target sift_draw"
 .PHONY : CMakeFiles/sift_draw.dir/all
 
